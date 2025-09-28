@@ -12,8 +12,16 @@ void StepperMotor::moveForward(int steps) {
     move(true, steps);
 }
 
-void StepperMotor::moveBackwards(int steps) {
+void StepperMotor::moveBackward(int steps) {
     move(false, steps);
+}
+
+void StepperMotor::moveForwardMillimeters(int millimeters) {
+    moveForward(steps_to_move_1_millimeter * millimeters);
+}
+
+void StepperMotor::moveBackwardMillimeters(int millimeters) {
+    moveBackward(steps_to_move_1_millimeter * millimeters);
 }
 
 void StepperMotor::move(bool high, int steps) {
